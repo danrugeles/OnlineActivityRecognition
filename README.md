@@ -17,3 +17,5 @@ as a way to test the effect of training a physical activity performed by one per
 * **Train/Test** Press another female figure to start training another physical activitity or to start testing the same physical activity. Press the same button when training or testing is finished.
 * **Evaluate** Read the Bhattacharyya distance between the distributions to see how far are the distributions in space. 
 
+
+![Alt text](vis3_40.jpg "Online AR App")
