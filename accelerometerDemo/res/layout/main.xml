@@ -1,31 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background3"
+    android:orientation="vertical"
+    android:paddingBottom="20dp"
+    android:paddingTop="20dp" >
 
+<RelativeLayout
+    android:id="@+id/linearLayout5"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="left|bottom"
+    android:height="40dp" >
+
     <TextView
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
+        android:layout_centerInParent="true"
+        android:layout_gravity="top|right"
         android:gravity="center"
-        android:text="Fall Detection Demo"
-        android:textSize="16sp"
-        android:textStyle="bold" android:padding="20dip"/>
+        android:padding="20dip"
+        android:paddingBottom="20dp"
+        android:text="@string/title"
+        android:textColor="@color/text"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:color="@drawable/degrade" />
+
+    <Button
+        android:id="@+id/extractFeaturesBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/reset_button"
+        android:gravity="center"
+        android:paddingBottom="4dp"
+        android:paddingTop="4dp"
+        android:text="@string/reset"
+        android:width="60dp" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout5"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" android:gravity="center_horizontal">
+    </RelativeLayout>
+    
+<RelativeLayout
+    android:id="@+id/linearLayout5"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="-100dp"
+    android:gravity="center|fill_vertical"
+    android:orientation="vertical"
+    android:paddingTop="10dp" >
+        
+         <ImageButton
+             android:id="@+id/WalkingButton"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="70dp"
+             android:layout_marginRight="30dp"
+             android:layout_marginTop="80dp"
+             android:background="@drawable/walking_button"
+             android:src="@drawable/walking" />
+
+        <ImageButton
+            android:id="@+id/RunningButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_toRightOf="@+id/WalkingButton"
+            android:background="@drawable/running_button"
+            android:src="@drawable/running" />
+
+        <ImageButton
+            android:id="@+id/StandingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_toRightOf="@+id/RunningButton"
+            android:background="@drawable/standing_button"
+            android:src="@drawable/standing" />
+
+        <ImageButton
+            android:id="@+id/SittingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_toRightOf="@+id/StandingButton"
+            android:background="@drawable/sitting_button"
+            android:src="@drawable/sitting" />
+        
+        <ImageButton
+            android:id="@+id/LayingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="280dp"
+            android:layout_toRightOf="@+id/SittingButton"
+            android:background="@drawable/laying_button"
+            android:src="@drawable/laying" />
 
         <Button
             android:id="@+id/sensorBtn"
-            android:layout_width="0dp"
+            android:layout_width="92dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:text="@string/start" android:layout_weight="1"/>
+            android:layout_alignBottom="@+id/WalkingButton"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@+id/RunningButton"
+            android:background="@drawable/custom_button"
+            android:text="@string/start" />
 
-    </LinearLayout>
-
+    </RelativeLayout>
+        
     <TableLayout
         android:id="@+id/tableLayout1"
         android:layout_width="fill_parent"
@@ -35,41 +124,42 @@
             android:id="@+id/tableRow1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
-
-            <TextView
+
+            <!-- TextView
                 android:id="@+id/textView_sensorRateLbl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="5dp"
-                android:text="Sensor Rate:" />
+                android:text="@string/rate"
+                android:textColor="@color/text" /-->
 
-            <Spinner
+            <!-- Spinner
                 android:id="@+id/spinner_rate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2" />
+                android:layout_weight="2" /-->
 
-            <TextView
+            <!-- TextView
                 android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="milliseconds" android:padding="5dp"/>
+                android:text="milliseconds" android:padding="5dp"/-->
 
         </TableRow>
 
         <TableRow
             android:id="@+id/tableRow2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
+            android:layout_height="wrap_content" >
             <TextView
                 android:id="@+id/textView_sensingDuration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="5dp"
-                android:text="Duration" />
+                android:text="Duration"
+                android:textColor="@color/text" />
 
             <EditText
                 android:id="@+id/editText_senseDuration"
@@ -100,8 +190,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="5dp"
-                android:text="Window Size:" />
-
+                android:text="Window Size:"
+                android:textColor="@color/text" />
+            
             <EditText
                 android:id="@+id/editText_windowSize"
                 android:layout_width="wrap_content"
@@ -124,25 +215,31 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" android:gravity="center" android:padding="10dp">
 
-        <TextView
+        <!--  TextView
             android:id="@+id/textView_senseStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
-            android:textSize="@dimen/Large" />
-
+            android:textSize="@dimen/Large" /-->
+
         <TextView
             android:id="@+id/textView_counter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:text="0" />
-
+            android:text="0"
+            android:textColor="@color/text"
+            android:textStyle="@color/text"
+            android:color="@color/black" />
+
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="samples" android:layout_marginLeft="5dp"/>
+            android:layout_marginLeft="5dp"
+            android:text="samples"
+            android:textColor="@color/text"
+            android:color="@color/black" />
 
     </LinearLayout>
 
@@ -151,12 +248,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" android:gravity="center_vertical">
 
-        <Button
-            android:id="@+id/extractFeaturesBtn"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:text="Analyze" android:layout_weight="1"/>
-
+        
         <Button
             android:id="@+id/TestBtn"
             android:layout_width="0dip"
@@ -173,56 +265,77 @@
 
     </LinearLayout>
 
-    <TableLayout
+    <!--  TableLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingTop="10dip"
         android:stretchColumns="*" android:layout_marginTop="20dp">
 
+    
         <TableRow>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="X-Axis"
-                android:textSize="@dimen/small" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="“Y-Axis”"
-                android:textSize="@dimen/small" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Z-Axis"
-                android:textSize="@dimen/small" />
-        </TableRow>
-
-        <TableRow>
-
             <TextView
                 android:id="@+id/x_axis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center" />
+                android:gravity="center"
+                android:textColor="@color/text"
+                android:textSize="@dimen/medium" />
 
             <TextView
                 android:id="@+id/y_axis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center" />
+                android:gravity="center"
+                android:textColor="@color/text"
+                android:textSize="@dimen/medium" />
 
             <TextView
                 android:id="@+id/z_axis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center" />
-        </TableRow>
-    </TableLayout>
+                android:gravity="center"
+                android:textColor="@color/text"
+                android:textSize="@dimen/medium" />
 
+        </TableRow>
+        
+           <TableRow>
+            <TextView
+                android:id="@+id/major"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/text"
+                android:textSize="@dimen/medium" />
+
+            <TextView
+                android:id="@+id/minor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/text"
+                android:textSize="@dimen/medium" />
+
+            <TextView
+                android:id="@+id/rotation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/text"
+                android:textSize="@dimen/medium" />
+        </TableRow>
+                
+    </TableLayout-->
+
+     <LinearLayout
+         android:id="@+id/mControls"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:gravity="center"
+         android:paddingBottom="50dp"
+         android:paddingLeft="50dp"
+         android:paddingRight="50dp"
+         android:paddingTop="50dp" >
+    </LinearLayout>
+    
 </LinearLayout>

@@ -168,7 +168,7 @@
             android:layout_width="fill_parent"
             android:layout_height="2dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp" android:background="@color/whilte"/>
+            android:layout_marginTop="10dp" android:background="@color/white"/>
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -194,7 +194,7 @@
             android:layout_width="fill_parent"
             android:layout_height="2dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp" android:background="@color/whilte"/>
+            android:layout_marginTop="10dp" android:background="@color/white"/>
 
     <ScrollView
         android:id="@+id/scrollView1"

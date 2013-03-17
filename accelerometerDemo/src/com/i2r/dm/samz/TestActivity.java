@@ -21,8 +21,6 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
-// This is a pointless comment --senthil
-
 public class TestActivity extends Activity implements SensorEventListener {
 
 	public static final String DEBUG_TAG = "Accelerometer Log";

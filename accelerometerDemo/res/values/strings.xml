@@ -3,11 +3,19 @@
 
     <string name="hello">Hello World, AccelerometerDemoActivity!</string>
     <string name="app_name">AccelerometerDemo</string>
-    <string name="start">Start Sensor</string>
-    <string name="stop">Stop Sensor</string>
+    <string name="start">Training</string>
+    <string name="stop">Training</string>
     <string name="sensing">Sensing</string>
     <string name="not_sensing">Not Sensing</string>
     <string name="fall">Fall Detected</string>
     <string name="no_fall">No Fall happened</string>
-
+    <string name="walking">Walking</string>
+    <string name="running">Running</string>
+    <string name="standing">Standing</string>
+    <string name="sitting">Sitting</string>
+    <string name="laying">Laying</string>
+    <string name="title">Activity Recognition</string>
+    <string name="rate">Sensor Rate</string>
+    <string name="reset">Reset</string>
+    
 </resources>

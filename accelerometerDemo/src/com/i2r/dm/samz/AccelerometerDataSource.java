@@ -1,6 +1,5 @@
 package com.i2r.dm.samz;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +8,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.Environment;
 import android.util.Log;
 
 public class AccelerometerDataSource {
@@ -29,25 +27,12 @@ public class AccelerometerDataSource {
 	}
 
 	public void open() throws SQLException {
-		//database = dbHelper.getWritableDatabase(); //commented by Daniel
-		// Below 3 lines by Dan - this is useful for debugging
-			
-		File sdcard = Environment.getExternalStorageDirectory();
-		String dbfile = sdcard.getAbsolutePath() + File.separator + "mydb.db";
+		database = dbHelper.getWritableDatabase();
 
-		database = SQLiteDatabase.openDatabase(dbfile, null,SQLiteDatabase.NO_LOCALIZED_COLLATORS);
-		
-		Log.i("database path",sdcard.getAbsolutePath());
-		if(database.isOpen()){
-		Log.i("Database","Database is open");
-		}else{
-		Log.i("Database","Database is not open");
-		}
 	}
 
 	public void close() throws SQLException {
 		database.close();
-		Log.i("Database","Database is closed");
 	}
 
 	public void insertData(AccData data) throws Exception {
@@ -143,7 +128,6 @@ public class AccelerometerDataSource {
 	}
 
 	private AccData makeData(Cursor cursor) {
-		
 		AccData data = new AccData();
 		data.setId(cursor.getInt(0));
 		data.setSession(cursor.getInt(1));
@@ -154,15 +138,4 @@ public class AccelerometerDataSource {
 		data.setRate(cursor.getInt(6));
 		return data;
 	}
-
-	public void query(String myquery) {
-		
-		Cursor cursor=database.rawQuery(myquery, null);
-		cursor.moveToFirst();
-		while(!cursor.isAfterLast()){
-			
-		}
-		cursor.close();
-		}
-	}
-
+}
